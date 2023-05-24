@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+
+<sdf version="1.5">
+  <world name="default">
+    <!-- A global light source -->
+    <scene>
+      <ambient>1 1 1 1.0</ambient>
+      <shadows>0</shadows>
+    </scene>
+
+
+
+    <light name='uaser_directional_light_0' type='directional'>
+      <pose>-1.18957 1.47056 10 1.24562 -0 0</pose>
+    </light>
+    <light name='usaer_directional_light_0_clone' type='directional'>
+      <pose>-4.259 9.24533 10 -1 0 0</pose>
+    </light>
+    <light name='usear_directional_light_0_clone_clone' type='directional'>
+      <pose>-10.5198 18.3171 5.66497 2.80325 -0 -2.79666</pose>
+    </light>
+    <light name='usera_directional_light_1' type='directional'>
+      <pose>-25.0421 31.2267 1 3.14159 1.4499 3.14159</pose>
+    </light>
+    <light name='user_adirectional_light_2' type='directional'>
+      <pose>-24.2784 28.9275 1 3.14159 1.42654 3.14159</pose>
+    </light>
+    <light name='user_dairectional_light_3' type='directional'>
+      <pose>-25.7754 7.9687 1 0.646216 0.883507 -1.71937</pose>
+    </light>
+    <light name='user_diarectional_light_3_clone' type='directional'>
+      <pose>-24.256 2.91119 1 0.663023 -0.189261 -0.996158</pose>
+    </light>
+
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <model name="myx_mesh">
+      <pose>-5 0 -0.09 0 0 0 0</pose>
+      <static>true</static>
+      <link name="body">
+        <selfCollide>true</selfCollide>
+        <self_collide>true</self_collide>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>model://map.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+
+
+    </model>
+    
+    <model name="my_mesh">
+      <pose>-5 0 -0.08 0 0 0 0</pose>
+      <static>true</static>
+      <link name="body">
+        <selfCollide>true</selfCollide>
+        <self_collide>true</self_collide>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>model://squares.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+
+
+    </model>
+   
+    <model name='unit_box'>
+      <pose>25.1171 -11.7369 0.5 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+
+  </world>
+</sdf>

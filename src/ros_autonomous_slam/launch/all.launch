@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<include file="$(find ros_autonomous_slam)/launch/mjpg_stream.launch">
+</include>
+
+<include file="$(find ros_autonomous_slam)/launch/new.launch">
+</include>
+
+<include file="$(find ros_autonomous_slam)/launch/movebasenew.launch">
+</include>
+
+<node pkg="beginner_tutorials" type="xommander.py" name="xommander" output="screen"></node>
+<node pkg="ros_autonomous_slam" type="odomserial.py" name="odomserial" output="screen"></node>
+<node pkg="ros_autonomous_slam" type="odom.py" name="odom" output="screen"></node>
+<node pkg="ros_autonomous_slam" type="seg3lidar.py" name="seg3lidar" output="screen"></node>
+
+  </launch>
+
+
+
